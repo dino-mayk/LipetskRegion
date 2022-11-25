@@ -3,5 +3,3 @@ venv
 .env
 __pycache__
 static
-media
-sent_emails

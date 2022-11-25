@@ -15,7 +15,13 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'homepage.apps.HomepageConfig',
+    'celebrities.apps.CelebritiesConfig',
+    'landmarks.apps.LandmarksConfig',
+    'feedback.apps.FeedbackConfig',
     'grappelli',
+    'tinymce',
+    'sorl.thumbnail',
+    'django_cleanup.apps.CleanupConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -95,4 +101,26 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = 'static'
 
+MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_URL = '/media/'
+
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = BASE_DIR / 'sent_emails'
+
+if DEBUG:
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ]
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
+    INTERNAL_IPS = ['127.0.0.1', ]
+
+    import mimetypes
+    mimetypes.add_type("application/javascript", ".js", True)
+
+    DEBUG_TOOLBAR_CONFIG = {
+        'INTERCEPT_REDIRECTS': False,
+    }

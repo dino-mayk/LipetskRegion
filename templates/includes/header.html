@@ -16,6 +16,24 @@
             {% else %}
               <li><a href="{% url 'homepage:home' %}" class="nav-link px-2 text-white">Главная</a></li>
             {% endif %}
+
+            {% if view_name == 'celebrities:list' or view_name == 'celebrities:detail' %}
+              <li><a href="{% url 'celebrities:list' %}" class="nav-link px-2 text-secondary">Известные люди</a></li>
+            {% else %}
+              <li><a href="{% url 'celebrities:list' %}" class="nav-link px-2 text-white">Известные люди</a></li>
+            {% endif %}
+
+            {% if view_name == 'landmarks:list' or view_name == 'landmarks:detail' %}
+              <li><a href="{% url 'landmarks:list' %}" class="nav-link px-2 text-secondary">Достопримечательности</a></li>
+            {% else %}
+              <li><a href="{% url 'landmarks:list' %}" class="nav-link px-2 text-white">Достопримечательности</a></li>
+            {% endif %}
+
+            {% if view_name == 'feedback:feedback' %}
+              <li><a href="{% url 'feedback:feedback' %}" class="nav-link px-2 text-secondary">Обратная связь</a></li>
+            {% else %}
+              <li><a href="{% url 'feedback:feedback' %}" class="nav-link px-2 text-white">Обратная связь</a></li>
+            {% endif %}
             
           {% endwith %}
         </ul>

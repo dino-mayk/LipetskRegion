@@ -8,10 +8,4 @@ class StaticURLTests(TestCase):
             self.assertEqual(response.status_code, 200)
 
 
-class TaskPagesTests(TestCase):
-    def test_homepage_show_correct_context(self):
-        response = Client().get('/')
-        self.assertIn('items', response.context)
-
-
 # python manage.py test homepage

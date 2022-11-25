@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <h1>Достопримечательсти</h1>
+        {% for landmark in landmarks %}
+        {% include "includes/landmarks_card.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}
