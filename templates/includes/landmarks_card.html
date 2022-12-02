@@ -1,7 +1,17 @@
-<div class="card landmark col-4 my-3">
-    <div class="card-body">
+{% load static %}
+
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ landmark.img }}" class="img-fluid rounded-start" alt="..." width="250px" height="250px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
         <h5 class="card-title">{{ landmark.name }}</h5>
         <p class="card-text">{{ landmark.text|safe }}</p>
-        <p class="card-text">{{ landmark.link }}</p>
+        <a href="{{ landmark.link }}">{{ landmark.link }}</a>
+      </div>
     </div>
+  </div>
 </div>

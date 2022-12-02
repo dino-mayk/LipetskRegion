@@ -1,13 +1,25 @@
 from django.shortcuts import get_object_or_404, render
 
-from landmarks.models import LandmarkItem
+from landmarks.models import LandmarkItem, LandmarkItemPreview
 
 
 def list(request):
-    landmarks = LandmarkItem.objects.all()
+    ans = []
 
+    landmarks = LandmarkItem.objects.all()
+    landmarks_images = LandmarkItemPreview.objects.all()
+
+    for i in range(len(landmarks)):
+        ans.append(
+            {
+                'img': landmarks_images[i],
+                'name': landmarks[i].name,
+                'text': landmarks[i].text,
+                'link': landmarks[i].link
+            }
+        )
     context = {
-        'landmarks': landmarks,
+        'landmarks': ans,
     }
 
     return render(request, 'landmarks/list.html', context)

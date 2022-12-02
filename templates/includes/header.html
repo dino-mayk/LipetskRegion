@@ -1,13 +1,14 @@
 {% load static %}
 
-<header class="p-3 text-bg-dark">
-    <div class="container">
 
-      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-          <img src="{% static 'favicon_package/logo.svg' %}"
-        </a>
-
+<header>
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Мой Липецк</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
         <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
           {% with request.resolver_match.view_name as view_name %}
 
@@ -34,10 +35,10 @@
             {% else %}
               <li><a href="{% url 'feedback:feedback' %}" class="nav-link px-2 text-white">Обратная связь</a></li>
             {% endif %}
-            
+
           {% endwith %}
         </ul>
-        
       </div>
     </div>
+  </nav>
 </header>

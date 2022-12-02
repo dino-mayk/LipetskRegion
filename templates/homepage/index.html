@@ -3,9 +3,19 @@
 {% load static %}
 
 {% block content %}
-    <div class="container">
-        <h1>Главная</h1>
-        <img src="{% static 'other/img/human.jpg'%}" width="400px" height="400px" class="m-2">
-        <img src="{% static 'other/img/monkey.jpg'%}" width="400px" height="400px" class="m-2">
+  <h1>Главная</h1>
+  <div class="container">
+    <img src="{% static 'other/img/Слайд1.jpg' %}" class="img-fluid" alt="...">
+    <div class="container m-3">
+      <div class="row">
+        {% for celebrity in celebrities %}
+          <div class="col-sm">
+            <img src="{{ celebrity.img }}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+            <h2>{{ celebrity.name }}</h2>
+            <p class="w-50">{{ celebrity.text|safe }}</p>
+          </div>
+        {% endfor %}
+      </div>
     </div>
+  </div>
 {% endblock %}

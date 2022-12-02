@@ -2,10 +2,7 @@ from django.db import models
 
 
 class Feedback(models.Model):
-    text = models.TextField(
-        verbose_name="текст",
-        help_text="введите ваш текст",
-    )
+    text = models.TextField()
     created_on = models.DateTimeField(
         auto_now_add=True,
         verbose_name="дата создания",

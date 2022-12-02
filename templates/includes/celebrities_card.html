@@ -1,6 +1,16 @@
-<div class="card celebrity col-4 my-3">
-    <div class="card-body">
-        <h5 class="card-title">{{ celebrity.name }} {{ celebrity.surname }} {{ celebrity.patronymic }}</h5>
-        <p class="card-text">{{ celebrity.text|safe }}</p>
+{% load static %}
+
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ celebrity.img }}" class="img-fluid rounded-start" width="250px" height="250px" alt="...">
     </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ celebrity.name }} {{ celebrity.patronymic }} {{ celebrity.surname }}</h5>
+        <p class="card-text">{{ celebrity.text|safe }}</p>
+      </div>
+    </div>
+  </div>
 </div>

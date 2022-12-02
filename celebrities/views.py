@@ -1,13 +1,26 @@
 from django.shortcuts import get_object_or_404, render
 
-from celebrities.models import CelebrityItem
+from celebrities.models import CelebrityItem, CelebrityItemPreview
 
 
 def list(request):
-    celebrities = CelebrityItem.objects.all()
+    ans = []
 
+    celebrities = CelebrityItem.objects.all()
+    celebrities_images = CelebrityItemPreview.objects.all()
+
+    for i in range(len(celebrities)):
+        ans.append(
+            {
+                'img': celebrities_images[i],
+                'name': celebrities[i].name,
+                'surname': celebrities[i].surname,
+                'patronymic': celebrities[i].patronymic,
+                'text': celebrities[i].text
+            }
+        )
     context = {
-        'celebrities': celebrities,
+        'celebrities': ans,
     }
 
     return render(request, 'celebrities/list.html', context)
