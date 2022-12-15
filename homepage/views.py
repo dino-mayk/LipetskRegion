@@ -8,12 +8,15 @@ def home(request):
     celebrities = CelebrityItem.objects.all()[0:3]
     celebrities_images = CelebrityItemPreview.objects.all()[0:3]
 
+
+
     for i in range(len(celebrities)):
         ans.append(
             {
                 'img': celebrities_images[i],
                 'name': celebrities[i].name,
-                'text': celebrities[i].text
+                'patronymic': celebrities[i].patronymic,
+                'surname': celebrities[i].surname,
             }
         )
     context = {

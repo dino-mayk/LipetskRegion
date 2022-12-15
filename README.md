@@ -53,11 +53,11 @@ pip3 install -r requirements.txt
 
 Windows:
 ```bash
-python manage.py runserver
+python index.py runserver
 ```
 Mac, Linux:
 ```bash
-python3 manage.py runserver
+python3 index.py runserver
 ```
 
 # Разработка
@@ -66,22 +66,22 @@ python3 manage.py runserver
 
 Windows:
 ```bash
-python manage.py createsuperuser
+python index.py createsuperuser
 ```
 
 Mac, Linux:
 ```bash
-python3 manage.py createsuperuser
+python3 index.py createsuperuser
 ```
 
 Смена пароля в аккаунте:
 
 Windows:
 ```bash
-python manage.py changepassword <user_name>
+python index.py changepassword <user_name>
 ```
 
 Mac, Linux:
 ```bash
-python3 manage.py changepassword <user_name>
+python3 index.py changepassword <user_name>
 ```

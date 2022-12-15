@@ -11,8 +11,9 @@
         {% for celebrity in celebrities %}
           <div class="col-sm">
             <img src="{{ celebrity.img }}" class="bd-placeholder-img rounded-circle" width="140" height="140">
-            <h2>{{ celebrity.name }}</h2>
-            <p class="w-50">{{ celebrity.text|safe }}</p>
+            <h5>{{ celebrity.name }}</h5>
+            <h5>{{ celebrity.patronymic }}</h5>
+            <h5>{{ celebrity.surname }}</h5>
           </div>
         {% endfor %}
       </div>

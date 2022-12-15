@@ -15,8 +15,8 @@ class FormFeedback(forms.ModelForm):
             Feedback.text.field.name,
         )
         labels = {
-            Feedback.text.field.name: 'текст'
+            Feedback.text.field.name: 'Текст'
         }
         help_texts = {
-            Feedback.text.field.name: 'введите ваш текст'
+            Feedback.text.field.name: 'Введите ваш текст'
         }
