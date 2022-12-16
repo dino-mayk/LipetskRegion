@@ -3,6 +3,7 @@ from django.shortcuts import redirect, render
 
 from news.models import News
 
+
 def news(request):
     news = News.objects.all()
     context = {

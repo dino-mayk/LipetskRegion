@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from landmarks.models import LandmarkItem, LandmarkItemGallery, \
-    LandmarkItemPreview
+from landmarks.models import (LandmarkItem, LandmarkItemGallery,
+                              LandmarkItemPreview)
 
 
 class LandmarkItemAdmin(admin.ModelAdmin):

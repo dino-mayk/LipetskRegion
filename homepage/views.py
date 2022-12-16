@@ -1,4 +1,5 @@
 from django.shortcuts import render
+
 from celebrities.models import CelebrityItem, CelebrityItemPreview
 
 

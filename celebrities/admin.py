@@ -1,7 +1,7 @@
 from django.contrib import admin
 
-from celebrities.models import CelebrityItem, CelebrityItemGallery, \
-    CelebrityItemPreview
+from celebrities.models import (CelebrityItem, CelebrityItemGallery,
+                                CelebrityItemPreview)
 
 
 class CelebrityItemAdmin(admin.ModelAdmin):
