@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="container m-2">
+        <h1>Новости</h1>
+        {% for news_item in news %}
+        {% include "includes/news_card.html" %}
+        {% endfor %}
+    </div>
+{% endblock %}

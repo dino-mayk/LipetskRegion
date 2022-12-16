@@ -1,0 +1,13 @@
+{% load static %}
+
+
+<div class="card mb-3">
+  <div class="row g-0">
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">{{ news_item.name }}</h5>
+        <p class="card-text">{{ news_item.text|safe }}</p>
+      </div>
+    </div>
+  </div>
+</div>

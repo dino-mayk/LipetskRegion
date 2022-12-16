@@ -14,6 +14,7 @@ DEBUG = os.environ.get('DEBUG', default='True') == 'True'
 ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
+    'news.apps.NewsConfig',
     'homepage.apps.HomepageConfig',
     'celebrities.apps.CelebritiesConfig',
     'landmarks.apps.LandmarksConfig',

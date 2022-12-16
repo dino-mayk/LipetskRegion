@@ -23,6 +23,10 @@ def feedback(request):
             fail_silently=False
         )
 
-        return redirect('feedback:feedback')
+        return redirect('feedback:feedback_thank_you')
 
     return render(request, template, context)
+
+def feedback_thank_you(request):
+    template = 'feedback/done.html'
+    return render(request, template)

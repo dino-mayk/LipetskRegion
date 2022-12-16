@@ -36,6 +36,13 @@
               <li><a href="{% url 'feedback:feedback' %}" class="nav-link px-2 text-white">Обратная связь</a></li>
             {% endif %}
 
+            {% if view_name == 'news:news' %}
+              <li><a href="{% url 'news:news' %}" class="nav-link px-2 text-secondary">Новости</a></li>
+            {% else %}
+              <li><a href="{% url 'news:news' %}" class="nav-link px-2 text-white">Новости</a></li>
+            {% endif %}
+
+
           {% endwith %}
         </ul>
       </div>
